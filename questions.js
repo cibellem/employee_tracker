@@ -19,7 +19,7 @@ const actions = [
             "Remove role",
             "View all departments",
             "Add department",
-            "remove department",
+            "Remove department",
             "Exit"
 
         ]
