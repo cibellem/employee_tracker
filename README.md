@@ -18,4 +18,11 @@ Update employee roles<br>
 In your terminal type: git clone https://github.com/cibellem/employee_tracker.git <br>
 Open in Visual Studio to build and run.
 
+
+### User Story
+
+
 ### Demo
+
+
+![ demogif](gif.gif) <br>

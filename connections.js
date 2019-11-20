@@ -117,11 +117,13 @@ function addEmployee() {
             connection.query(query, VALUES, function (err) {
                 if (err) throw err;
                 console.log("Employee successfully added!");
+                determineAction()
             }
 
             )
         })
     })
+
 }
 
 
@@ -158,13 +160,16 @@ function addDpt() {
             message: "Which Department would you like to add?"
         })
         .then(function (result) {
-            connection.query("INSERT INTO department SET", {
-                name: result.newDpt
-            }, function (err) {
+
+
+            var query = "INSERT INTO department SET?"
+            console.log(query)
+            var query1 = connection.query(query, [{ name: result.newDpt }], function (err) {
                 if (err) throw err;
                 console.table("Department Created Successfully!");
                 determineAction()
             });
+
 
         })
 }
@@ -246,46 +251,67 @@ function addRole() {
 // function viewByDpt() {
 
 
-//     connection.query("SELECT * from Department", function (err, results) {
+//     const qrydepatment = "SELECT *FROM department"
+//     const employeeQuery = "SELECT *FROM employee"
+//     connection.query(qrydepatment, function (err, department) {
+//         connection.query(employeeQuery, function (err, employee) {
 
-//         console.log(results)
-//         if (err) throw err
-//     })
+//             if (err) throw err
 
-//     inquirer.prompt([
+//             inquirer.prompt([
 
-//         {
-//             name: "choices",
-//             type: "list",
-//             message: "Which department would like to get results from?",
-//             choices: function () {
-//                 var arrayOfChoices = [];
-//                 for (var i = 0; i < departments.length; i++) {
-//                     arrayOfChoices.push(departments[i].name);
+//                 {
+//                     name: "choices",
+//                     type: "list",
+//                     message: "Which department would like to get results from?",
+//                     choices: function () {
+//                         var arrayOfChoices = [];
+//                         for (var i = 0; i < department.length; i++) {
+//                             arrayOfChoices.push(department[i].name);
+//                         }
+//                         return arrayOfChoices;
+//                     },
 //                 }
-//                 return arrayOfChoices;
-//             },
-//         }
-//     ]).then(function (res) {
+//             ]).then(function (res) {
 
-//         for (var i = 0; i < results.length; i++) {
-//             if (results[i].name === res.results) {
-//                 res.department_id = results[i].id;
-//             }
+//                 // for (var i = 0; i < employee.length; i++) {
+//                 //     if (employee[i].role_id === res.results) {
+//                 //         res.department_id = results[i].id;
+//                 //     }
 
-//             const query = "SELECT * FROM employee WHERE role_id=?"
-
-
+//                 const query = "SELECT employee.first_name AS FirstName, employee.last_name fROM employee WHERE?"
+//                 var values = { name: res.choices }
+//                 console.log(values)
+//                 var query2 = connection.query(query, values, function (err, results) {
 
 
-//             connection.query(query, [res.department], function (err, results) {
+//                     console.table(results)
+//                     console.log(query2 + "----------------------")
+//                     if (err) throw err
+//                 })
 
-//                 console.log(results)
-//                 if (err) throw err
+
 //             })
+//         })
+//     })
+// }
 
 
-//         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function updateRole() {
     //selecting all columns for department so I can further loop over and get the department ID
