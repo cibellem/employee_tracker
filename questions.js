@@ -7,7 +7,6 @@ const actions = [
         choices: [
 
             "Add new employee",
-            "Update an employee",
             "View all employees",
             "View employees by department",
             "Update employee role",

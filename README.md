@@ -15,7 +15,7 @@ Update employee roles<br>
 *SQL*, *MySql*, *Node.js* 
 
 ### Installation
-In your terminal type: git clone https://github.com/cibellem/employee_tracker.git
+In your terminal type: git clone https://github.com/cibellem/employee_tracker.git <br>
 Open in Visual Studio to build and run.
 
 ### Demo
